@@ -56,3 +56,5 @@ export default tseslint.config({
 cd ad-performance-dashboard-ts
 npm install
 npm run dev
+
+npm install --save-dev react-select

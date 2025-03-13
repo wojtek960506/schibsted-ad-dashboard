@@ -4,6 +4,12 @@ export enum AdType {
   VIDEO = 'video'
 };
 
+export enum AllAds {
+  ALL_ADS = "all_ads"
+};
+
+export type AllAdTypes = AllAds | AdType;
+
 export type BaseAd = {
   id: string,
   impressions: number,
@@ -33,3 +39,4 @@ export interface FetchData {
   data?: AdData[];
   error?: Error;
 }
+
