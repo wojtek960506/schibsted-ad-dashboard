@@ -1,5 +1,5 @@
 import { AdData, AdType } from "../../services/types";
-import { formatNumber } from "../../services/utils";
+import { capitalization, formatNumber } from "../../services/utils";
 import { AdRendererImage } from "./AdRendererImage";
 import { AdRendererMetric } from "./AdRendererMetric/AdRendererMetric";
 import { AdRendererText } from "./AdRendererText";
@@ -27,6 +27,8 @@ export const AdRenderer = ( { adData }: AdRendererProps) => {
     }
   }
 
+  const adTypeBoxClassName = `ad-type-box ad-type-box-${type}`;
+  
   return (
     <div className="ad-renderer">    
       {getRenderer()}
@@ -35,6 +37,7 @@ export const AdRenderer = ( { adData }: AdRendererProps) => {
         <AdRendererMetric title="Clicks" value={formatNumber(adData.clicks)} />
         <AdRendererMetric title="CTR" value={`${adData.ctr}%`} />
       </div>
+      <div className={adTypeBoxClassName}>{capitalization(type, ' ')}</div>
     </div>
   )
 

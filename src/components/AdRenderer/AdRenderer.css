@@ -7,7 +7,7 @@
 }
 
 .ad-renderer {
-  background-color: #f9f9f9;
+  background-color: #f6f6f6;
   border-radius: 10px;
   margin-bottom: 20px;
   width: 32%;
@@ -15,6 +15,23 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.ad-type-box {
+  position: absolute;
+  background-color: #d6d6d6;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 5px;
+  top: 5px;
+  left: 5px;
+
+}
+
+.ad-type-box-text {
+  top: 20px;
+  left: 20px;
 }
 
 .image-ad {
@@ -29,12 +46,28 @@
   border-top-right-radius: 10px;
 }
 
+.text-ad {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 20px;
+}
+
+.text-headline {
+  font-weight: bold;
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
 
 .ad-renderer-metrics {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 60px;
+  padding-left: 20px;
+  border-top: 1px solid #cccccc;
 }
 
 @media only screen and (max-width: 700px) {

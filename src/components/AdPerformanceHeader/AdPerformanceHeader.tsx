@@ -4,6 +4,7 @@ import Select from 'react-select';
 import './AdPerformanceHeader.css';
 import { AdType, AllAds, AllAdTypes } from '../../services/types';
 import { AdFilterContext } from '../../services/AdFitlerContext';
+import { capitalization } from '../../services/utils';
 
 
 interface AdTypeOption {
@@ -12,10 +13,10 @@ interface AdTypeOption {
 }
 
 const options: AdTypeOption[] = [
-  { value: AllAds.ALL_ADS, label: AllAds.ALL_ADS.valueOf() },
-  { value: AdType.IMAGE, label: AdType.IMAGE.valueOf() },
-  { value: AdType.TEXT, label: AdType.TEXT.valueOf() },
-  { value: AdType.VIDEO, label: AdType.VIDEO.valueOf() }
+  { value: AllAds.ALL_ADS, label: capitalization(AllAds.ALL_ADS.valueOf(), '_') },
+  { value: AdType.IMAGE, label: capitalization(AdType.IMAGE.valueOf(), '_') },
+  { value: AdType.TEXT, label: capitalization(AdType.TEXT.valueOf(), '_') },
+  { value: AdType.VIDEO, label: capitalization(AdType.VIDEO.valueOf(), '_') }
 ]
 
 export const AdPerformanceHeader = () => {

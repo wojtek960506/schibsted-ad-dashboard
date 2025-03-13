@@ -1,5 +1,7 @@
 .loading-container {
   position: absolute;
+  display: flex;
+  justify-content: space-around;
   left: 0px;
   top: 0px;
   width: 100%;
@@ -8,7 +10,6 @@
 
 .loading-value {
   position: relative;
-  left: calc(50% - 50px);
   top: 50%;
   font-size: 30px;
   font-weight: bold;

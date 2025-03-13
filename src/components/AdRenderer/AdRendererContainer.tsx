@@ -14,7 +14,6 @@ export const AdRendererContainer = () => {
 
   const chosenType = useMemo(() => {
     const typesToFilter = [];
-    console.log('adTypFilter', adTypeFilter);
     switch (adTypeFilter.adTypeFilter) {
       case AllAds.ALL_ADS:
         typesToFilter.push(AdType.IMAGE, AdType.TEXT, AdType.VIDEO)
@@ -29,7 +28,6 @@ export const AdRendererContainer = () => {
         typesToFilter.push(AdType.VIDEO);
         break;
     }
-    console.log(typesToFilter);
     return typesToFilter;
   }, [adTypeFilter])
 

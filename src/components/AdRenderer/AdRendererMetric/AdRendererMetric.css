@@ -1,12 +1,13 @@
 .ad-renderer-metric-container {
   width: 33%;
+  display: flex;
+  align-items: center;
 }
 
 .ad-renderer-metric {
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 10px;
 }
 
 .ad-renderer-metric-title {
