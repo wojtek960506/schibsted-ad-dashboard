@@ -1,0 +1,21 @@
+.ad-renderer-metric-container {
+  width: 33%;
+}
+
+.ad-renderer-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 10px;
+}
+
+.ad-renderer-metric-title {
+  font-size: 13px;
+  margin-bottom: 3px;
+  color: rgb(61, 61, 61);
+}
+
+.ad-renderer-metric-value {
+  font-size: 18px;
+  font-weight: bold;
+}

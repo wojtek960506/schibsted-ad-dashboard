@@ -1,0 +1,51 @@
+.ad-performance {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.ad-metric-container {
+  background-color: #f9f9f9;
+  border-radius: 10px; 
+  width: 32%;
+  margin-bottom: 10px;
+}
+
+.ad-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 15px;
+}
+
+.ad-metric-title {
+  font-size: 15px;
+  margin-bottom: 5px;
+  color: rgb(61, 61, 61);
+}
+
+.ad-metric-value {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 700px) {
+  .ad-performance {
+    flex-direction: column;
+  }
+  
+  .ad-metric-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1000px) {
+  .ad-performance {
+    flex-wrap: wrap; 
+  }
+  .ad-metric-container {
+    width: 49%;
+
+  }
+}

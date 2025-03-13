@@ -1,0 +1,60 @@
+.ad-renderer-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.ad-renderer {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 32%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.image-ad {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.video-ad {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+
+.ad-renderer-metrics {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 60px;
+}
+
+@media only screen and (max-width: 700px) {
+  .ad-renderer-container {
+    flex-direction: column;
+  }
+  
+  .ad-renderer {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1000px) {
+  .ad-renderer-container {
+    flex-wrap: wrap;
+  }
+  
+  .ad-renderer {
+    width: 49%;
+  }
+}
+
+

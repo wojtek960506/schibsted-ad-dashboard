@@ -1,0 +1,8 @@
+.ad-performance-dashboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  max-height: 50px;
+  margin-top: 15px;
+  font-size: 25px;
+}
