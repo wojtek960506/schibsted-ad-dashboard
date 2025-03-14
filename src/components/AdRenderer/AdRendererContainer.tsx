@@ -1,40 +1,24 @@
-import { useContext, useMemo } from "react";
+import { useContext } from 'react';
 
-import { AdRenderer } from "./AdRenderer";
-import { AdContext } from "../../services/AdContext";
+import { AdRenderer } from './AdRenderer';
 
-import "./AdRenderer.css"
-import { AdFilterContext } from "../../services/AdFitlerContext";
-import { AdType, AllAds } from "../../services/types";
+import { AdContext } from '../../services/AdContext';
+import { AdFilterContext } from '../../services/AdFitlerContext';
+import { AllAds } from '../../services/types';
+
+import './AdRenderer.css';
 
 
 export const AdRendererContainer = () => {
   const { data: adsData } = useContext(AdContext);
   const { adTypeFilter } = useContext(AdFilterContext);
 
-  const chosenType = useMemo(() => {
-    const typesToFilter = [];
-    switch (adTypeFilter.adTypeFilter) {
-      case AllAds.ALL_ADS:
-        typesToFilter.push(AdType.IMAGE, AdType.TEXT, AdType.VIDEO)
-        break;
-      case AdType.IMAGE:
-        typesToFilter.push(AdType.IMAGE);
-        break;
-      case AdType.TEXT:
-        typesToFilter.push(AdType.TEXT);
-        break;
-      case AdType.VIDEO:
-        typesToFilter.push(AdType.VIDEO);
-        break;
-    }
-    return typesToFilter;
-  }, [adTypeFilter])
-
   return (
-    <div className="ad-renderer-container">
-      {adsData?.filter(adData => chosenType.includes(adData.type))
-        .map(adData => <AdRenderer key={adData.id} adData={adData} />)}
+    <div className='ad-renderer-container'>
+      {adsData?.filter(adData => {
+        if (adTypeFilter.adTypeFilter === AllAds.ALL_ADS) return true;
+        return adData.type === adTypeFilter.adTypeFilter;
+      }).map(adData => <AdRenderer key={adData.id} adData={adData} />)}
     </div>
   )
 }

@@ -1,9 +1,8 @@
-
-
 interface AdMetricProps {
   title: string;
   value: string | number;
 }
+
 
 export const AdMetric = ({ title, value }: AdMetricProps) => {
   return (
@@ -15,4 +14,3 @@ export const AdMetric = ({ title, value }: AdMetricProps) => {
     </div>
   )
 }
-

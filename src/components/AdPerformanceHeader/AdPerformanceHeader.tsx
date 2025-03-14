@@ -1,10 +1,11 @@
 import { useContext } from 'react';
 import Select from 'react-select';
 
-import './AdPerformanceHeader.css';
 import { AdType, AllAds, AllAdTypes } from '../../services/types';
 import { AdFilterContext } from '../../services/AdFitlerContext';
 import { capitalization } from '../../services/utils';
+
+import './AdPerformanceHeader.css';
 
 
 interface AdTypeOption {
@@ -22,12 +23,11 @@ const options: AdTypeOption[] = [
 export const AdPerformanceHeader = () => {
   const { setAdTypeFilter } = useContext(AdFilterContext);
   
-
   return (
-    <div className="ad-performance-dashboard">
+    <div className='ad-performance-dashboard'>
       <span>Ad Performance Dashboard</span>
       <Select 
-        className="select-ad-type"
+        className='select-ad-type'
         options={options}
         defaultValue={options[0]}
         onChange={(option) => setAdTypeFilter(option!.value)}

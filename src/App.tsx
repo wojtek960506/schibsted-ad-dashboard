@@ -1,15 +1,17 @@
-import { ReactNode, useReducer } from 'react'
+import { useReducer } from 'react'
 
-import { useGetFetch } from './services/useFetch'
-import { AdContext } from './services/AdContext'
 import { AdPerformance } from './components/AdPerformance/AdPerformance'
 import { AdPerformanceHeader } from './components/AdPerformanceHeader/AdPerformanceHeader'
 import { AdRendererContainer } from './components/AdRenderer/AdRendererContainer'
+
+import { AdContext } from './services/AdContext'
+import { AdFilterContext, initialAdFilterState } from './services/AdFitlerContext'
+import { ErrorHandler } from './services/ErrorHandler'
+import { adFilterReducer } from './services/reducers'
 import { AdData } from './services/types'
+import { useGetFetch } from './services/useGetFetch'
 
 import './App.css'
-import { adFilterReducer } from './services/reducers'
-import { AdFilterContext, initialAdFilterState } from './services/AdFitlerContext'
 
 const API_URL = 'https://my-json-server.typicode.com/akramsaouri/ad-performance/ads';
 
@@ -24,25 +26,6 @@ const DataLoading = () => {
   )
 }
 
-interface ErrorHandlerProps {
-  error?: Error,
-  children: ReactNode | ReactNode[]
-}
-
-const ErrorHandler = ({error, children}: ErrorHandlerProps) => {
-  return (
-    <>
-      {error
-        ? <div className='loading-container'>
-            <div className='loading-value'>
-              Something went wrong. Please check the logs.
-            </div>
-          </div>
-        : <>{children}</>
-      } 
-    </>
-  )
-}
 
 const App = () => {
   const { data, error } = useGetFetch<AdData[]>(API_URL);

@@ -2,11 +2,11 @@ export enum AdType {
   IMAGE = 'image',
   TEXT = 'text',
   VIDEO = 'video'
-};
+}
 
 export enum AllAds {
   ALL_ADS = "all_ads"
-};
+}
 
 export type AllAdTypes = AllAds | AdType;
 
@@ -15,7 +15,7 @@ export type BaseAd = {
   impressions: number,
   clicks: number,
   ctr: number,
-};
+}
 
 export type ImageAd = BaseAd & {
   type: AdType.IMAGE;
@@ -40,3 +40,8 @@ export interface FetchData {
   error?: Error;
 }
 
+export interface AdMetrics {
+  totalImpressions: number;
+  totalClicks: number;
+  averageCtr: number;
+}

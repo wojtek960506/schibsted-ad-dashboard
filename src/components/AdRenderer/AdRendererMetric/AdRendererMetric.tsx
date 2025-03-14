@@ -1,4 +1,5 @@
-import './AdRendererMetric.css'
+import './AdRendererMetric.css';
+
 
 interface AdMetricProps {
   title: string;
@@ -15,7 +16,3 @@ export const AdRendererMetric = ({ title, value }: AdMetricProps) => {
     </div>
   )
 }
-        
-        
-
-

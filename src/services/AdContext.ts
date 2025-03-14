@@ -1,5 +1,5 @@
-import { createContext } from "react";
-import { AdData } from "./types";
+import { createContext } from 'react';
+import { AdData } from './types';
 
 
 export const AdContext = createContext(
