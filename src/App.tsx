@@ -1,14 +1,12 @@
-import { useReducer } from 'react'
+import { useState } from 'react'
 
 import { AdPerformance } from './components/AdPerformance/AdPerformance'
 import { AdPerformanceHeader } from './components/AdPerformanceHeader/AdPerformanceHeader'
 import { AdRendererContainer } from './components/AdRenderer/AdRendererContainer'
 
 import { AdContext } from './services/AdContext'
-import { AdFilterContext, initialAdFilterState } from './services/AdFitlerContext'
 import { ErrorHandler } from './services/ErrorHandler'
-import { adFilterReducer } from './services/reducers'
-import { AdData } from './services/types'
+import { AdData, AdTypeFilter, AllAds } from './services/types'
 import { useGetFetch } from './services/useGetFetch'
 
 import './App.css'
@@ -26,21 +24,24 @@ const DataLoading = () => {
   )
 }
 
-
 const App = () => {
   const { data, error } = useGetFetch<AdData[]>(API_URL);
-  const [adTypeFilter, setAdTypeFilter] = useReducer(adFilterReducer, initialAdFilterState);
+
+  const [adTypeFilter, setAdTypeFilter] = useState<AdTypeFilter>(AllAds.ALL_ADS);
  
+  const filteredData = data ? data.filter(adData => {
+    if (adTypeFilter === AllAds.ALL_ADS) return true;
+    return adData.type === adTypeFilter;
+  }) : undefined;
+
   return ( 
     <ErrorHandler error={error}>
       {data ? 
         (
-          <AdContext.Provider value={{data}}>
-            <AdFilterContext.Provider value={{ adTypeFilter, setAdTypeFilter }}>
-              <AdPerformanceHeader />
-              <AdPerformance />
-              <AdRendererContainer />
-            </AdFilterContext.Provider>
+          <AdContext.Provider value={{data: filteredData, setAdTypeFilter}}>
+            <AdPerformanceHeader />
+            <AdPerformance />
+            <AdRendererContainer />
           </AdContext.Provider>
         ) : <DataLoading />
       }

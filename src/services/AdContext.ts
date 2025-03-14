@@ -1,7 +1,13 @@
 import { createContext } from 'react';
-import { AdData } from './types';
+import { AdData, AdTypeFilter } from './types';
 
 
-export const AdContext = createContext(
-  {data: undefined as AdData[] | undefined}
-);
+type AdContextType = {
+  data?: AdData[];
+  setAdTypeFilter: React.Dispatch<React.SetStateAction<AdTypeFilter>>
+}
+
+export const AdContext = createContext<AdContextType>({
+  data: undefined as AdData[] | undefined,
+  setAdTypeFilter: () => null,
+});

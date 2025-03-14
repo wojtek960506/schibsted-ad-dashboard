@@ -8,7 +8,7 @@ export enum AllAds {
   ALL_ADS = "all_ads"
 }
 
-export type AllAdTypes = AllAds | AdType;
+export type AdTypeFilter = AllAds | AdType;
 
 export type BaseAd = {
   id: number,
