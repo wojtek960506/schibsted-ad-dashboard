@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 interface ReturnData<T> {
   data?: T;
   error?: Error
-}
+};
 
 export const useGetFetch = <T>(url: string): ReturnData<T> => {
   const [data, setData] = useState<T | undefined>(undefined);
