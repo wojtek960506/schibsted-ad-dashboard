@@ -20,6 +20,7 @@ describe('App', () => {
     mockedUseGetFetch.mockReturnValue({data: mockedAdsResponse, error: undefined})
     render(<App />);
     expect(screen.getByText("Ad Performance Dashboard")).toBeInTheDocument();
-
+    // there is 10 ads in mocked data
+    expect(screen.getAllByText('Impressions')).toHaveLength(10);
   })
 });

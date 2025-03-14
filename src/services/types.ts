@@ -11,7 +11,7 @@ export enum AllAds {
 export type AllAdTypes = AllAds | AdType;
 
 export type BaseAd = {
-  id: string,
+  id: number,
   impressions: number,
   clicks: number,
   ctr: number,
