@@ -20,3 +20,10 @@ To run the project change directory to the root of the project and then run the 
 To run all of the unit tests prepared for this project run the given command
 
 `npm run test`
+
+
+### Info
+
+Author: Wojciech Zieliński
+
+template of this project was created using Vite. All implementation was done by the author.
